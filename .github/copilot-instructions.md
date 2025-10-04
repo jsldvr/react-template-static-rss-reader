@@ -1,6 +1,6 @@
-# React News Project
+# React RSS Template
 
-This is a React + Vite project that displays news feeds from multiple RSS sources.
+This is a React + Vite template for creating customizable RSS aggregators.
 
 ## Tech Stack
 - React 19 with TypeScript

@@ -1,17 +1,26 @@
-# News
+# React RSS
 
-A modern news aggregator built with React, Vite, and Tailwind CSS. Fetches and displays the latest articles from 24+ RSS feeds including NY Times, CBS, NBC, Politico, and more.
+A modern, customizable RSS aggregator template built with React, Vite, and Tailwind CSS. Create your own news aggregator by configuring RSS feeds and deploying to any platform.
 
 ## Features
 
 - 📱 **Responsive Design** - Mobile-first responsive layout with Tailwind CSS v4
-- 🔄 **Build-time Feeds** - Fetches latest articles from 24+ RSS sources at build time
+- 🔄 **Build-time Feeds** - Fetches latest articles from configurable RSS sources at build time
 - ⚡ **Fast Loading** - Built with Vite for optimal performance
 - 🎨 **Modern UI** - Clean card-based design with smooth hover effects
-- 📰 **Multiple Sources** - Aggregates 670+ articles from major news outlets
+- 📰 **Customizable Sources** - Add any RSS feeds you want to aggregate
 - 🌙 **Dark Mode** - System-aware light/dark theme with manual toggle
-- 📄 **Pagination** - Smart pagination with 24 articles per page
+- 📄 **Pagination** - Smart pagination for unlimited articles
 - 🎯 **Local Fonts** - Newsreader font served locally (zero CDN dependencies)
+- 🛠️ **Easy Customization** - Simple configuration for feeds, styling, and deployment
+
+## Why Use This Template?
+
+- **Zero CORS Issues** - Build-time RSS parsing eliminates cross-origin problems
+- **SEO Friendly** - Static generation for better search indexing
+- **Performance Optimized** - Local fonts, dark mode, responsive design
+- **Production Ready** - Includes CI/CD, error handling, and accessibility features
+- **Highly Customizable** - Easy to modify feeds, styling, and functionality
 
 ## Tech Stack
 
@@ -29,28 +38,32 @@ A modern news aggregator built with React, Vite, and Tailwind CSS. Fetches and d
 - Node.js 18+
 - npm or yarn
 
-### Installation
+### Getting Started
 
-1. Clone the repository:
+1. Fork this repository to your GitHub account
+
+2. Clone your fork:
 
 ```bash
-git clone https://github.com/jsldvr/news.git
-cd news
+git clone https://github.com/YOUR_USERNAME/react-rss.git
+cd react-rss
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Start the development server:
+4. Configure your RSS feeds (see [Configuration](#configuration) section)
+
+5. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+6. Open your browser and navigate to `http://localhost:5173`
 
 ## Available Scripts
 
@@ -61,15 +74,23 @@ npm run dev
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (Recommended)
 
-This project is configured for automatic deployment to GitHub Pages:
+This template is pre-configured for GitHub Pages deployment:
 
 1. Push your code to the `main` branch
-2. GitHub Actions will automatically build and deploy your site
-3. Your site will be available at `https://jsldvr.github.io/news/`
+2. Enable GitHub Pages in your repository settings
+3. GitHub Actions will automatically build and deploy your site
+4. Your site will be available at `https://YOUR_USERNAME.github.io/react-rss/`
 
-### Manual Deployment
+### Other Platforms
+
+The build output in the `dist` folder can be deployed to any static hosting platform:
+
+- **Netlify**: Connect your GitHub repo for automatic deployments
+- **Vercel**: Import your repository for zero-config deployment  
+- **Cloudflare Pages**: Connect via GitHub integration
+- **Manual**: Upload `dist` folder contents to any web server
 
 ```bash
 npm run build
@@ -80,20 +101,49 @@ npm run build
 
 ### RSS Feed Sources
 
-RSS feeds are configured in `scripts/fetch-rss.js` and fetched at build time. The script includes 24+ sources covering:
+RSS feeds are configured in `scripts/fetch-rss.js` and fetched at build time. The template includes a sample Hacker News feed to get you started.
 
-- **Politics**: NY Times Politics, RealClearPolitics, Politico, The Hill
-- **Technology**: TechCrunch, The Verge, Hacker News, NY Times Technology
-- **Business**: NY Times Business, Business Insider
-- **General News**: CBS, NBC, Yahoo News, NY Post, Newsweek
-- **Conservative**: National Review, Breitbart, The Blaze, The Federalist
-- **Specialty**: Military.com, The Firearm Blog, Jonathan Turley
+**To customize your feeds:**
 
-To add or modify sources, edit the `feeds` array in `scripts/fetch-rss.js`.
+1. Open `scripts/fetch-rss.js`
+2. Edit the `feedSources` array with your desired RSS feeds:
 
-### Tailwind CSS
+```javascript
+const feedSources = [
+  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
+  { name: 'BBC News', url: 'http://feeds.bbci.co.uk/news/rss.xml' },
+  { name: 'Reuters', url: 'https://feeds.reuters.com/reuters/topNews' },
+  // Add more feeds here
+];
+```
 
-Customize the design by editing `tailwind.config.js` or adding custom styles to `src/index.css`.
+**Popular RSS Feed Categories:**
+- **Technology**: TechCrunch, The Verge, Ars Technica, Hacker News
+- **News**: BBC, Reuters, AP News, NPR
+- **Business**: Financial Times, Wall Street Journal, Bloomberg
+- **Science**: Science Daily, Nature, Scientific American
+
+**Finding RSS Feeds:**
+- Look for RSS/XML icons on websites
+- Try adding `/feed`, `/rss`, or `/feed.xml` to website URLs
+- Use tools like RSS Feed Finder or Feedly's search
+
+### Styling Customization
+
+**Tailwind CSS:**
+- Edit `tailwind.config.js` for theme customization
+- Add custom styles in `src/index.css`
+- Modify component styling in individual `.tsx` files
+
+**Color Themes:**
+- Light/dark mode is built-in
+- Customize colors in Tailwind config
+- Theme switching handled automatically
+
+**Layout:**
+- Adjust pagination settings in `Feed.tsx`
+- Modify card layouts and grid responsive breakpoints
+- Customize header and footer in `App.tsx`
 
 ## Architecture
 
@@ -117,8 +167,17 @@ This project uses **build-time RSS parsing** to avoid CORS issues and improve pe
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## Template Usage
+
+This is a template repository - you're encouraged to:
+
+- Fork it to create your own RSS aggregator
+- Customize the feeds for your needs
+- Deploy it to your preferred platform
+- Contribute improvements back to the template
+
 ## Acknowledgments
 
-- RSS feeds provided by NY Times, CBS, NBC, Politico, TechCrunch, and 20+ other sources
 - Newsreader font by Production Type (served locally)
 - Built with React 19, Vite 7, and Tailwind CSS v4
+- RSS parsing powered by rss-parser library
