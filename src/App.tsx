@@ -55,6 +55,7 @@ function App() {
         <footer className="border-t border-gray-200 dark:border-gray-700 mt-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center text-gray-500 dark:text-gray-400 text-sm min-h-[120px] flex flex-col justify-center">
+              {/* Navigation Links */}
               <div className="flex justify-center space-x-6 mb-4">
                 <Link
                   to="/about"
@@ -69,21 +70,26 @@ function App() {
                   Privacy Policy
                 </Link>
               </div>
-              <p>Built with React, Vite, and Tailwind CSS.</p>
-              <p className="mt-2">
-                Aggregating news from 24+ sources including NY Times, CBS, NBC,
-                Politico, and more
+              
+              {/* Template Information */}
+              <p className="mb-2 font-medium">
+                RSS Aggregator Template
               </p>
-              <p className="mt-3 text-xs opacity-75">
+              
+              {/* Tech Stack */}
+              <p className="mb-3">Built with React, Vite, and Tailwind CSS</p>
+              
+              {/* Template Action */}
+              <div className="text-xs">
                 <a
-                  href="https://amzn.to/4nkJh97"
+                  href="https://github.com/jsldvr/react-rss"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                 >
-                  Support this project through Amazon
+                  Fork this repository to create your own news aggregator
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </footer>
