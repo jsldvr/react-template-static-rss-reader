@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] - 2025-10-04
+
+Simplified RSS feed aggregation for improved performance and maintainability.
+
+**Changed**
+
+- Reduced RSS feeds from 33 sources to single Hacker News feed
+- RSS fetch time significantly improved (now fetches from 1 source vs 33)
+- Streamlined content focus to tech-related news from Hacker News
+
+**Removed**
+
+- 32 RSS feed sources including news outlets, YouTube channels, and political sources
+- Multiple timeout-prone feed sources that could cause build failures
+- Complex multi-source aggregation logic overhead
+
+**Technical**
+
+- Updated `feedSources` array in `scripts/fetch-rss.js` to single entry
+- Maintained all existing functionality with simplified data source
+- Preserved video handling, thumbnail extraction, and content formatting
+- Build and development processes now run faster and more reliably
+
 ## [1.7.2] - 2025-09-28
 
 Enhanced video experience with modal playback and footer improvements.
