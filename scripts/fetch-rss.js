@@ -3,39 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const feedSources = [
-  { name: 'TechCrunch', url: 'https://techcrunch.com/feed/' },
-  { name: 'Hacker News', url: 'https://hnrss.org/frontpage' },
-  { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml' },
-  { name: 'RealClearPolitics', url: 'https://feeds.feedburner.com/realclearpolitics/qlMj' },
-  { name: 'New York Post', url: 'https://nypost.com/rss' },
-  { name: 'Politico Congress', url: 'https://rss.politico.com/congress.xml' },
-  { name: 'Yahoo News', url: 'https://news.yahoo.com/rss' },
-  { name: 'CBS News', url: 'https://www.cbsnews.com/latest/rss/main' },
-  { name: 'NBC News', url: 'https://feeds.nbcnews.com/nbcnews/public/news' },
-  { name: 'National Review', url: 'https://www.nationalreview.com/feed/' },
-  { name: 'The Hill', url: 'https://thehill.com/rss/syndicator/19109' },
-  { name: 'Breitbart', url: 'https://feeds.feedburner.com/breitbart' },
-  { name: 'The Blaze', url: 'https://www.theblaze.com/rss' },
-  { name: 'The Federalist', url: 'https://thefederalist.com/feed/' },
-  { name: 'The Epoch Times', url: 'https://www.theepochtimes.com/feed' },
-  { name: 'Business Insider', url: 'https://www.businessinsider.com/rss' },
-  { name: 'Military.com', url: 'https://www.military.com/rss-feeds/content?keyword=headlines&channel=news&type=news' },
-  { name: 'Jonathan Turley', url: 'https://jonathanturley.org/rss' },
-  { name: 'NY Times Politics', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml' },
-  { name: 'NY Times Business', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml' },
-  { name: 'NY Times Technology', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml' },
-  { name: 'The Firearm Blog', url: 'https://www.thefirearmblog.com/blog/feed/' },
-  { name: 'AOL News', url: 'https://www.aol.com/rss' },
-  { name: 'Newsweek', url: 'https://www.newsweek.com/rss' },
-  { name: 'Marques Brownlee', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ' },
-  { name: 'Richard Gene The Fishing Machine', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCzGaX29DR0VlH2tUCODFixg' },
-  { name: 'Funniest Animals Ever', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCP83iCyLq0Q5VdaQKp0r7kg' },
-  { name: 'Astrum', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UC-9b7aDP6ZN0coj9-xFnrtw' },
-  { name: 'ABC News', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCBi2mrWuNuyYy4gbM6fU18Q' },
-  { name: 'CBS News', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UC8p1vwvWtl6T73JiExfWs1g' },
-  { name: 'NBC News', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCeY0bbntWzzVIaj2z3QigXg' },
-  { name: 'Fox News', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCXIJgqnII2ZOINSWNOGFThA' },
-  { name: 'CNN', url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCupvZG-5ko_eiXAupbDfxWw' },
+  { name: 'Hacker News', url: 'https://hnrss.org/frontpage' }
 ];
 
 async function fetchAllFeeds() {
