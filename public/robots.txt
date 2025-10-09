@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+
+# Prohibit all search engine indexing
+# This is a template RSS aggregator
+# Contact: GitHub issues on jsldvr/react-rss repository

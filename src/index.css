@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Required for Tailwind v4 dark: utilities to respond to html.dark
+   Do NOT remove. Some editors may flag this at-rule; it is valid. */
+@variant dark (.dark &);
+
+/* Fonts are now inlined in HTML head for performance */
+
+/* Apply consistent transitions */
+body {
+  transition: background-color 0.3s ease;
+}
+
+/* Theme-aware body background and color scheme */
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+body {
+  background-color: rgb(249 250 251);
+}
+.dark body {
+  background-color: rgb(17 24 39);
+}
+
+/* Ensure stable layout by preventing content shifts */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
