@@ -1,7 +1,6 @@
 {
-  "name": "react-rss",
-  "private": true,
-  "version": "0.0.0",
+  "name": "react-template-static-rss-reader",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "npm run fetch-feeds && vite",
