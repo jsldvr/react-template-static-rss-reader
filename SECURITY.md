@@ -1,29 +1,31 @@
-# Security Policy
+# SECURITY? BET. 💅
 
-## Reporting Security Issues
-- Email `security@static-rss-reader.local` with a detailed description, reproduction steps, and any proof-of-concept code.
-- Do not create public GitHub issues for suspected vulnerabilities; allow the maintainers time to investigate and release a fix.
-- Expect an acknowledgment within 3 business days and a remediation plan or status update within 10 business days.
+## 🚨 Pull Up With Bugs?
+- Slide into `security@static-rss-reader.local` with the whole tea: repro steps, PoC, screenshots, vibes.
+- Don’t blast it on GitHub issues—keep it low-key so we can cook a fix in peace.
+- We clap back in ≤3 biz days; full game plan drops by day 10 unless the boss fight is extra wild.
 
-## Supported Versions
-- `main`: actively maintained; fixes are released promptly.
-- Tagged releases from the past 6 months receive security backports for critical issues.
+## 🗓️ Versions That Get Love
+- `main` branch = main character. Always patched, always glowing.
+- Tags from the last 6 months still get the armor buff if it’s a critical hit.
 
-## Secure Development Best Practices
-- Follow the [OWASP Top Ten](https://owasp.org/www-project-top-ten/) and [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) for guidance when adding new features.
-- Validate and sanitize all external data (RSS feeds, query parameters, environment variables) before use.
-- Treat third-party dependencies as untrusted; keep them updated, audit with `npm audit`, and avoid packages without a security track record.
-- Use TypeScript types defensively—prefer `unknown` over `any`, narrow types before accessing properties, and guard against undefined values.
-- Prevent XSS in rendered markup by avoiding `dangerouslySetInnerHTML`; if unavoidable, sanitize HTML with an OWASP-recommended library.
-- Ensure all network requests enforce HTTPS and verify certificate validity when integrating fetch logic outside the browser.
-- Store secrets (API keys, webhook URLs) outside version control and rotate them if exposure is suspected.
+## 🧠 Big-Brain Secure Coding Playbook
+- Stack the [OWASP Top Ten](https://owasp.org/www-project-top-ten/) and [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/) like your life depends on it. Because it does.
+- Any outside data (RSS feeds, params, env vars) = sus until sanitized. Validate or evaporate.
+- Dependencies are strangers—keep them patched, run `npm audit`, distrust mid-tier packages with zero street cred.
+- Flex TypeScript: start with `unknown`, narrow it down, guard every property access like it’s VIP.
+- No raw HTML dumps. `dangerouslySetInnerHTML`? Only if you armor it up with OWASP-approved sanitizer drip.
+- Force HTTPS everywhere, and if you’re fetching outside the browser, verify certs like a sigma.
+- Secrets live off-repo. If they leak, rotate faster than you rotate memes.
 
-## Build & Deployment Hygiene
-- Run `npm run lint`, `npm run build`, and `npm audit` before merging.
-- Review generated `public/feeds.json` for unexpected URLs or script injections.
-- Lock dependency versions via `package-lock.json`; do not bypass integrity checks.
-- Use branch protection to require successful CI runs before merging to `main`.
+## 🏗️ Build + Deploy Rituals
+- Combo `npm run lint`, `npm run build`, and `npm audit` before shipping. No skips.
+- Inspect `public/feeds.json` for cursed URLs or script-kiddie sauce.
+- Keep `package-lock.json` tight; no vibes, no tampering, checksum or bust.
+- Lock the branch with protection rules so CI blessings hit before merge.
 
-## Incident Response
-- If a vulnerability affects deployed builds, invalidate the published site, publish a hotfix, and notify stakeholders with remediation steps.
-- Document security incidents and the resolution timeline in the project wiki for future reference.
+## 🆘 When Stuff Explodes
+- If prod gets pwned, pull the site, hotfix ASAP, and ping the squad with what went down plus recovery steps.
+- Drop an incident postmortem in the project wiki so future you doesn’t repeat the L.
+
+Stay secure, stay rizzed, ship responsibly. 🛡️
