@@ -1,6 +1,7 @@
 {
   "name": "react-template-static-rss-reader",
   "version": "1.0.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "npm run fetch-feeds && vite",
